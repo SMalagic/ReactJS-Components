@@ -1,14 +1,13 @@
+import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
 
+import "./ExpenseItem.css";
+import "./ExpenseDate";
+
 function ExpenseItem(props) {
-  
-    const month = props.date.toLocateString('en-US', {month: 'long'});
-    const day = props.date.toLocateString('en-US', {day: '2-digit'});
-    const year = props.date.getFullYear();
-  
-    return (
+  return (
     <div className="expense-item">
-      <div>{props.date.toISOString()}</div>
+      <ExpenseDate date={props.date} />
       <div className="expense-item__description">
         <h2>{props.title}</h2>
         <div className="expense-item__price">${props.amount}</div>
